@@ -1,9 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using QuestionsAPI;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<QuestionsDbContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("MySQL"),
+    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("MySQL"))));
 
 var app = builder.Build();
 
@@ -15,30 +21,19 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-var summaries = new[]
+app.UseRouting();
+app.MapGet("/questions", async (QuestionsDbContext context) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    var result = await context.QuestionsAndAnswers
+        .Select(q => new QuestionsAndAnswers
+        {
+            Id = q.Id,
+            Text = q.Text,
+            Answer = q.Answer
+        })
+        .ToListAsync();
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+    return Results.Ok(result);
+});
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
