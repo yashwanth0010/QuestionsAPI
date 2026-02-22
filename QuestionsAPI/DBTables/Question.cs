@@ -11,5 +11,10 @@ namespace QuestionsAPI
         [Required]
         public required string Answer { get; set; }
 
+        [Required]
+        public required string Category { get; set; }
+
+        [Required]
+        public required string Options { get; set; }
     }
 }

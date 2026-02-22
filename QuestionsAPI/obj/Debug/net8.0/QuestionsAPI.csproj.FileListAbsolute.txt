@@ -123,3 +123,11 @@ C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\obj\Debug\net8.0\refi
 C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\obj\Debug\net8.0\QuestionsAPI.pdb
 C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\obj\Debug\net8.0\QuestionsAPI.genruntimeconfig.cache
 C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\obj\Debug\net8.0\ref\QuestionsAPI.dll
+C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\HemanthKumar\Y\PROJECTS\QuestionsAPI\QuestionsAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

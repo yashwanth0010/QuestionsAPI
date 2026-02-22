@@ -1,6 +1,6 @@
 # Build results
-bin/
-obj/
+QuestionsAPI/bin
+QuestionsAPI/obj
 
 # User-specific files
 *.user

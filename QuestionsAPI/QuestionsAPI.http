@@ -1,6 +1,30 @@
 @QuestionsAPI_HostAddress = http://localhost:5213
+@ClientId = client1
+@ClientSecret = secret1
 
-GET {{QuestionsAPI_HostAddress}}/weatherforecast/
+### 1. Get OAuth2 Token (Client Credentials Flow)
+POST {{QuestionsAPI_HostAddress}}/oauth/token
+Content-Type: application/json
+
+{
+  "clientId": "{{ClientId}}",
+  "clientSecret": "{{ClientSecret}}",
+  "grantType": "client_credentials"
+}
+
+###
+
+### 2. Get Questions with Authorization (Bearer Token)
+### Use the token from the above request and paste it here as @Token
+@Token = paste_token_from_step_1_here
+
+GET {{QuestionsAPI_HostAddress}}/questions
+Authorization: Bearer {{Token}}
 Accept: application/json
+
+###
+
+### 3. Get Questions WITHOUT Token (Should fail with 401 Unauthorized)
+GET {{QuestionsAPI_HostAddress}}/questions
 
 ###
